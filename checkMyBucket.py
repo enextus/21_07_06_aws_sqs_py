@@ -2,11 +2,8 @@ import boto3
 import botocore
 
 s3 = boto3.resource('s3')
-bucket_name = 'some-private-bucket'
-# bucket_name = 'bucket-to-check'
-
+bucket_name = 'eduard-bucket-002'
 bucket = s3.Bucket(bucket_name)
-
 
 def check_bucket(bucket):
     try:
@@ -28,5 +25,5 @@ def check_bucket(bucket):
 
             return False
 
-
-check_bucket(bucket)
+if __name__ == "__main__":
+    check_bucket(bucket)
