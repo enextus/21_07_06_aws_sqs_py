@@ -1,10 +1,18 @@
 import boto3
 from random import randint
 
-x = [randint(0, 9) for p in range(0, 10)]
+x = randint(1, 9)
+
+print(x)
+print(type(x))
+print("_______________________________")
 
 s3 = boto3.resource('s3')
-bucket_name = 'eduard-bucket-00' + chr(x);
+bucket_name = "eduard-bucket-00" + str(x)
+
+print(bucket_name)
+print(type(bucket_name))
+print("_______________________________")
 
 def createBucket(bucket_name):
     if s3.lookup(bucket_name) is None:
