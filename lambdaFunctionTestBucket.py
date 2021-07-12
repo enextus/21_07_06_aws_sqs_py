@@ -7,7 +7,7 @@ bucket_name = 'eduard-bucket-003'
 bucket = s3.Bucket(bucket_name)
 
 
-def lambda_handler():
+def lambda_handler(event, lambda_context):
     try:
         s3.meta.client.head_bucket(Bucket=bucket_name)
 
@@ -49,4 +49,5 @@ def lambda_handler():
             }
 
 if __name__ == "__main__":
-    lambda_handler()
+    event, lambda_context = 1, 2
+    lambda_handler(event, lambda_context)
